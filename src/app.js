@@ -17,7 +17,7 @@ app.get('/api/get-env', (req, res) => {
   const secretCode = process.env.SECRET_CODE;
 
   if (!secretCode) {
-    return res.status(200).json({ error: 'Secret code not found in environment variables' });
+    return res.status(404).json({ error: 'Secret code not found in environment variables' });
   }
 
   // Encrypt the secret code
